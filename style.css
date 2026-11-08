@@ -461,12 +461,14 @@ body {
     color: #666666;
     line-height: 1.6;
     margin: 0 0 24px 0;
-    /* Limita o texto de apoio para manter o padrão visual limpo */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    
+    /* Forma moderna e padronizada para limitar em 3 linhas com (...) */
+    display: block;
+    line-clamp: 3;
+    -webkit-line-clamp: 3; /* Mantemos esse aqui apenas por segurança para navegadores muito antigos */
     overflow: hidden;
 }
+
 
 /* Posicionamento do botão */
 .card-action {
@@ -607,24 +609,294 @@ body {
     padding-left: 24px; /* Mantém o recuo alinhado com o destaque acima */
 }
 
+/* Estrutura Geral */
+.parceiros-section {
+    background-color: #f7f4eb; /* Mantém a identidade bege neutra */
+    font-family: 'Arial', sans-serif;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parceiros-container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho */
+.parceiros-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+.parceiros-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0b2545; /* Azul institucional */
+    margin: 0 0 14px 0;
+}
+
+.parceiros-subtitle {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.parceiros-subtitle span {
+    display: block;
+    font-weight: 600;
+    color: #388e5c; /* Destaque em verde */
+    margin-top: 5px;
+}
+
+/* Grid Inteligente de Logos */
+.parceiros-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 60px; /* Espaçamento equilibrado entre as marcas */
+    width: 100%;
+}
+
+/* Item individual do Grid */
+.parceiro-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Define um teto de tamanho para que nenhum logo fique gigante */
+    width: 160px;
+    height: 80px; 
+}
+
+/* Estilização e Efeito Moderno nos Logos */
+.logo-parceiro {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Garante que o logo não distorça */
+    
+    /* Torna os logos sutilmente cinzas e suaves para não brigar com o design */
+    filter: grayscale(100%);
+    opacity: 0.6;
+    
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse: o logo ganha vida e cor */
+.parceiro-item:hover .logo-parceiro {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05); /* Leve aproximação suave */
+}
+
+/* Estrutura Geral */
+.parceiros-section {
+    background-color: #f7f4eb;
+    font-family: 'Arial', sans-serif;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita barras de rolagem indesejadas na página */
+}
+
+.parceiros-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho */
+.parceiros-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+.parceiros-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0b2545;
+    margin: 0 0 14px 0;
+}
+
+.parceiros-subtitle {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.parceiros-subtitle span {
+    display: block;
+    font-weight: 600;
+    color: #388e5c;
+    margin-top: 5px;
+}
+
+/* --- ESTRUTURA DO CARROSSEL --- */
+.parceiros-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Esconde os logos que saem da área visível */
+    padding: 20px 0;
+}
+
+/* Degradê suave nas pontas para dar efeito de sumiço (Fica lindo!) */
+.parceiros-slider::before,
+.parceiros-slider::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none; /* Garante que o usuário consiga passar o mouse no logo abaixo */
+}
+.parceiros-slider::before {
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, #f7f4eb 0%, rgba(247, 244, 235, 0) 100%);
+}
+.parceiros-slider::after {
+    right: 0;
+    top: 0;
+    background: linear-gradient(to left, #f7f4eb 0%, rgba(247, 244, 235, 0) 100%);
+}
+
+/* A pista cinemática que vai deslizar */
+.parceiros-track {
+    display: flex;
+    width: calc(240px * 10); /* Largura total somando todos os itens (originais + duplicados) */
+    gap: 60px;
+    animation: scrollInfinito 25s linear infinite; /* 25 segundos para dar a volta completa */
+}
+
+/* Pausa o carrossel se o usuário botar o mouse em cima para observar um parceiro */
+.parceiros-track:hover {
+    animation-play-state: paused;
+}
+
+/* Item individual */
+.parceiro-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px; /* Largura fixa para manter a velocidade constante */
+    height: 80px;
+}
+
+/* Ajuste dos logos */
+.logo-parceiro {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.parceiro-item:hover .logo-parceiro {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* ANIMAÇÃO CSS DO MOVIMENTO CONTINUO */
+@keyframes scrollInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move exatamente metade do tamanho total da pista (os logos duplicados) */
+        transform: translateX(calc(-50% - 30px)); 
+    }
+}
+
+/* ==========================================================================
+   SUPORTE PARA CELULARES E TABLETS (RESPONSIVIDADE GLOBAL)
+   ========================================================================== */
+
+/* 💻 Dispositivos Médios (Tablets / Telas até 992px) */
+@media (max-width: 992px) {
+    /* 4ª Seção: Transforma os 3 cards em 2 colunas para não esmagar */
+    .artigos-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* 📁 Dispositivos Pequenos (Celulares Grandes / Telas até 868px) */
+@media (max-width: 868px) {
+    /* 5ª Seção: Missão / Empilha o logo no topo e centraliza o texto */
+    .missao-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .missao-content {
+        text-align: center;
+    }
+    .missao-badge {
+        align-self: center;
+    }
+    .missao-highlight {
+        border-left: none;
+        border-top: 3px solid var(--color-success, #388e5c);
+        padding-left: 0;
+        padding-top: 15px;
+    }
+    .missao-text {
+        padding-left: 0;
+    }
+}
+
+/* 📱 Celulares Padrão (Telas até 768px) */
+@media (max-width: 768px) {
+    /* 3ª Seção: Ecoponto / Transforma as 2 colunas em 1 (Imagem no topo, texto embaixo) */
+    .ecoponto-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .ecoponto-list {
+        grid-template-columns: 1fr; /* Lista de lixo eletrônico vira uma coluna única */
+    }
+    .ecoponto-title {
+        font-size: 24px;
+    }
+
+    /* 6ª Seção: Parceiros / Ajusta o degradê lateral e diminui o tamanho visual dos logos */
+    .parceiros-title {
+        font-size: 22px;
+    }
+    .parceiros-slider::before,
+    .parceiros-slider::after {
+        width: 60px; /* Reduz a sombra lateral para sobrar mais espaço para os logos na tela do celular */
+    }
+    .parceiro-item {
+        width: 140px; /* Diminui a largura da caixa do logo para caber melhor na tela menor */
+        height: 65px;
+    }
+}
+
+/* 🪟 Celulares Muito Pequenos (Telas até 600px) */
 @media (max-width: 600px) {
+    /* 4ª Seção: Cards / Transforma os artigos em uma única coluna vertical */
     .artigos-section {
         padding: 40px 15px;
     }
     .artigos-container {
-        grid-template-columns: 1fr; /* Uma única coluna vertical em celulares */
-        gap: 24px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .card-media {
+        height: 180px; /* Reduz levemente a altura da imagem no celular para não cobrir a tela toda */
     }
 }
 
-/* Responsividade para telas menores (Celulares) */
-@media (max-width: 768px) {
-    .ecoponto-container {
-        grid-template-columns: 1fr; /* Transforma em uma única coluna vertical */
-        gap: 30px;
-    }
-    
-    .ecoponto-list {
-        grid-template-columns: 1fr; /* Lista vira uma coluna só no mobile */
-    }
-}
