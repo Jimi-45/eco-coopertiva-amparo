@@ -885,6 +885,148 @@ body {
     }
 }
 
+/* Base do Rodapé */
+.main-footer {
+    background-color: #9c6d53; /* O marrom original da cooperativa */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    padding: 60px 0 0 0; /* Deixa o espaçamento inferior para o sub-footer */
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    display: grid;
+    grid-template-columns: 4fr 3fr 3fr; /* Proporção limpa entre os blocos */
+    gap: 50px;
+}
+
+/* Estilos dos Blocos */
+.footer-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-brand-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    letter-spacing: -0.5px;
+}
+
+.footer-brand-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 20px 0;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+    color: #f7f4eb; /* Tom bege claro para destacar títulos secundários */
+}
+
+/* Links de Contato e Listas */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.icon-label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    opacity: 0.85;
+    color: #f7f4eb;
+}
+
+.footer-address-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Configuração das Redes Sociais */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff; /* Deixa os ícones brancos */
+}
+
+/* Efeito moderno ao passar o mouse nas redes sociais */
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Fundo Inferior (Sub-Footer) */
+.sub-footer {
+    background-color: rgba(0, 0, 0, 0.15); /* Cria um tom marrom mais escuro e elegante */
+    padding: 20px 20px;
+    width: 100%;
+}
+
+.sub-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Separa direitos autorais do CNPJ nas extremidades */
+    align-items: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.sub-footer-container p {
+    margin: 0;
+}
+
+.sub-footer-container strong {
+    color: #ffffff;
+}
+
+
 /* 🪟 Celulares Muito Pequenos (Telas até 600px) */
 @media (max-width: 600px) {
     /* 4ª Seção: Cards / Transforma os artigos em uma única coluna vertical */
@@ -897,6 +1039,27 @@ body {
     }
     .card-media {
         height: 180px; /* Reduz levemente a altura da imagem no celular para não cobrir a tela toda */
+    }
+}
+
+/* ==========================================================================
+    RESPONSIVIDADE DO FOOTER
+    ========================================================================== */
+@media (max-width: 850px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Empilha os três blocos verticalmente */
+        gap: 35px;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center; /* Centraliza as redes sociais no mobile */
+    }
+
+    .sub-footer-container {
+        flex-direction: column; /* Empilha termos e CNPJ no celular */
+        gap: 8px;
+        text-align: center;
     }
 }
 
