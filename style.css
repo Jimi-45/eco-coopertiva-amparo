@@ -263,3 +263,274 @@ body {
     transform: translateY(-2px); /* Leve efeito de elevação */
 }
 
+/* Configurações base da seção */
+.ecoponto-section {
+    background-color: #f7f4eb; /* Fundo bege claro idêntico ao da imagem */
+    font-family: 'Arial', sans-serif;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ecoponto-container {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas iguais */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Lado Esquerdo - Container da Imagem */
+.ecoponto-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ecoponto-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px; /* Leve arredondamento nos cantos se necessário */
+    object-fit: cover;
+}
+
+/* Lado Direito - Textos e Listas */
+.ecoponto-content {
+    color: #2c2c2c;
+}
+
+.ecoponto-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #0b2545; /* Azul escuro elegante */
+}
+
+.ecoponto-text {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+}
+
+.ecoponto-subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Lista em duas colunas */
+.ecoponto-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+}
+
+.ecoponto-list li {
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+/* Marcador verde personalizado da lista */
+.ecoponto-list li::before {
+    content: "•";
+    color: #388e5c; /* Verde correspondente */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: 0;
+}
+
+/* Estilização Exata do Botão */
+.ecoponto-action {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-saber-mais {
+    background-color: #388e5c; /* Tom exato de verde do botão */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 25px; /* Formato de pílula bem arredondado */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+    text-align: center;
+}
+
+/* Efeito de passar o mouse no botão */
+.btn-saber-mais:hover {
+    background-color: #2e754b;
+}
+
+/* Quarta seção */
+/* Configurações estruturais da seção */
+.artigos-section {
+    background-color: #f7f4eb; /* Mantém a paleta bege neutra */
+    font-family: 'Arial', sans-serif;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.artigos-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas idênticas */
+    gap: 30px;
+}
+
+/* Estilização Geral dos Cards Modernos */
+.artigo-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Leve elevação ao passar o mouse sobre o card inteiro */
+.artigo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Área da Imagem */
+.card-media {
+    width: 100%;
+    height: 220px; /* Altura fixa ideal para harmonia horizontal */
+    background-color: #eaeaea; /* Fundo reserva caso a imagem demore a carregar */
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir o espaço perfeitamente sem distorcer */
+}
+
+/* Bloco de conteúdo do Card */
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Garante que os botões fiquem todos alinhados embaixo */
+}
+
+.card-badge {
+    align-self: flex-start;
+    background-color: #f3f0e7;
+    color: #555555;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b2545; /* Azul institucional */
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    /* Limita o texto de apoio para manter o padrão visual limpo */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Posicionamento do botão */
+.card-action {
+    margin-top: auto; /* Empurra o botão para a base do card */
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Botão Verde com Efeito de Salto Tridimensional (Hover Saltando) */
+.btn-card-pop {
+    background-color: #388e5c; /* Mesmo tom de verde anterior */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 25px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(56, 142, 92, 0.2);
+    
+    /* Transições suaves aplicadas para o efeito saltando */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.2s ease, 
+                background-color 0.2s ease;
+}
+
+/* O Efeito Saltando e Ganhando Sombra */
+.btn-card-pop:hover {
+    background-color: #2e754b;
+    transform: translateY(-4px) scale(1.03); /* Eleva levemente e expande o botão */
+    box-shadow: 0 8px 15px rgba(46, 117, 75, 0.4); /* Projeta uma sombra marcante para baixo */
+}
+
+.btn-card-pop:active {
+    transform: translateY(-1px) scale(1.0);
+    box-shadow: 0 4px 6px rgba(46, 117, 75, 0.2);
+}
+
+/* Responsividade para Tablets e Celulares */
+@media (max-width: 992px) {
+    .artigos-container {
+        grid-template-columns: repeat(2, 1fr); /* Fica em duas colunas em tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .artigos-section {
+        padding: 40px 15px;
+    }
+    .artigos-container {
+        grid-template-columns: 1fr; /* Uma única coluna vertical em celulares */
+        gap: 24px;
+    }
+}
+
+/* Responsividade para telas menores (Celulares) */
+@media (max-width: 768px) {
+    .ecoponto-container {
+        grid-template-columns: 1fr; /* Transforma em uma única coluna vertical */
+        gap: 30px;
+    }
+    
+    .ecoponto-list {
+        grid-template-columns: 1fr; /* Lista vira uma coluna só no mobile */
+    }
+}
