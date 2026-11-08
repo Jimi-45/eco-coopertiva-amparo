@@ -513,6 +513,100 @@ body {
     }
 }
 
+/* Configurações estruturais */
+.missao-section {
+    background-color: #f7f4eb; /* Mantém o padrão bege sutil */
+    font-family: 'Arial', sans-serif;
+    padding: 90px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.missao-container {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 6fr; /* Proporção ideal equilibrando imagem e texto */
+    gap: 60px;
+    align-items: center;
+}
+
+/* Container do Logotipo Flutuante */
+.missao-brand-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Sombra difusa e elegante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.3s ease;
+}
+
+.logo-card:hover {
+    transform: scale(1.02);
+}
+
+.missao-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Bloco de Conteúdo Textual */
+.missao-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.missao-badge {
+    align-self: flex-start;
+    color: #388e5c; /* Verde padrão adotado nos botões */
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.missao-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0b2545; /* Azul institucional */
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+}
+
+/* Texto de Destaque / Gancho visual */
+.missao-highlight {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2c2c2c;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    border-left: 4px solid #388e5c; /* Detalhe verde na lateral */
+    padding-left: 20px;
+}
+
+/* Corpo do texto descritivo */
+.missao-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555555;
+    margin: 0;
+    padding-left: 24px; /* Mantém o recuo alinhado com o destaque acima */
+}
+
 @media (max-width: 600px) {
     .artigos-section {
         padding: 40px 15px;
